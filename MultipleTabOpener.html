@@ -109,7 +109,7 @@
             lines.forEach((line, index) => {
                 setTimeout(() => {
                     let isURL = line.match(/^(https?:\/\/)?(www\.)?[a-zA-Z0-9-]+\.[a-zA-Z]{2,}(\/.*)?$/);
-                    let finalQuery = additionalWord ? `${line} ${additionalWord}` : line; // No space between line and additionalWord
+                    let finalQuery = additionalWord ? `${line}${additionalWord}` : line; // No space between line and additionalWord
                     let finalURL = isURL ? (line.startsWith("http") ? finalQuery : "https://" + finalQuery) : "https://www.google.com/search?q=" + encodeURIComponent(finalQuery);
                     window.open(finalURL, "_blank");
                 }, index * 500);
