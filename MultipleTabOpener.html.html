@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi-Tab Link Opener - Open Multiple Links Instantly</title>
+    <meta name="description" content="Open multiple links or search queries in new tabs instantly. Ideal for SEO analysts, students, and professionals.">
+    <meta name="keywords" content="multiple tab opener, bulk link opener, SEO tool, search multiple queries, open multiple URLs, productivity tool">
+    <style>
+        body { 
+            font-family: 'Poppins', sans-serif; 
+            text-align: center; 
+            padding: 20px; 
+            background: #202216; 
+            color: #f2de9b;
+        }
+        .container { 
+            background: rgba(255, 255, 255, 0.1); 
+            padding: 25px; 
+            border-radius: 15px; 
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2); 
+            max-width: 600px; 
+            margin: auto; 
+            backdrop-filter: blur(10px);
+        }
+        textarea, input { 
+            width: 100%; 
+            padding: 10px; 
+            border: none; 
+            border-radius: 8px; 
+            background: rgba(255, 255, 255, 0.2); 
+            color: #f2de9b;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+        textarea::placeholder, input::placeholder {
+            color: #f2de9b
+        }
+        button { 
+            margin-top: 15px; 
+            padding: 12px 25px; 
+            background: #ff7eb3; 
+            color: white; 
+            border: none; 
+            border-radius: 8px; 
+            cursor: pointer; 
+            font-size: 16px;
+            transition: background 0.3s ease;
+        }
+        button:hover { 
+            background: #ff4a88; 
+        }
+        .content {
+            text-align: left;
+            max-width: 800px;
+            margin: auto;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 15px;
+            margin-top: 20px;
+        }
+        h2, h3 {
+            color: #ff7eb3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Multi-Tab Link Opener</h2>
+        <p>Paste links or search queries below. Links open directly, and search queries open in your chosen search engine.</p>
+        <textarea id="input-text" placeholder="Enter links or queries, one per line..."></textarea>
+        <input type="text" id="additional-word" placeholder="Enter a word to add to each query (optional)">
+        <br>
+        <button onclick="openTabs()">Open Tabs</button>
+    </div>
+
+    <div class="content">
+        <h2>What is Multi-Tab Link Opener?</h2>
+        <p>Multi-Tab Link Opener is a powerful and efficient tool that allows users to open multiple links or perform bulk searches in one click. It saves time and enhances productivity for researchers, SEO analysts, marketers, students, and professionals.</p>
+
+        <h3>How is This Tool Useful?</h3>
+        <ul>
+            <li><strong>SEO Professionals:</strong> Instantly open multiple URLs for backlink analysis and competitor research.</li>
+            <li><strong>Digital Marketers:</strong> Quickly launch multiple campaign pages or tracking links.</li>
+            <li><strong>Students & Researchers:</strong> Open multiple reference websites simultaneously for better study efficiency.</li>
+            <li><strong>Content Writers:</strong> Perform bulk searches on Google, Bing, or Yahoo for topic research.</li>
+            <li><strong>Developers & QA Testers:</strong> Check website links and functionality effortlessly.</li>
+        </ul>
+
+        <h3>Why Choose This Tool?</h3>
+        <ul>
+            <li><strong>Fast & Efficient:</strong> Open multiple links instantly without manual effort.</li>
+            <li><strong>User-Friendly Interface:</strong> Simple and easy-to-use design.</li>
+            <li><strong>Full Customization:</strong> Add keywords to each search query for better results.</li>
+        </ul>
+        <h3>How to Use Multi-Tab Opener</h3>
+        <li>Enter multiple URLs or search queries in the textarea, each on a new line.</li>
+            <li>Optionally, enter a word to be added to each search query.</li>
+            <li>Click "Open Tabs" to instantly open all links in new tabs.</li>
+            <li>The first entered link will be opened last, and the last entered link will be opened first.</li>
+    </div>
+    
+    <script>
+        function openTabs() {
+            let lines = document.getElementById("input-text").value.split("\n").map(line => line.trim()).filter(line => line);
+            let additionalWord = document.getElementById("additional-word").value.trim();
+            lines.reverse(); // Reverse order to open last link first
+            
+            lines.forEach((line, index) => {
+                setTimeout(() => {
+                    let isURL = line.match(/^(https?:\/\/)?(www\.)?[a-zA-Z0-9-]+\.[a-zA-Z]{2,}(\/.*)?$/);
+                    let finalQuery = additionalWord ? `${line}${additionalWord}` : line; // No space between line and additionalWord
+                    let finalURL = isURL ? (line.startsWith("http") ? finalQuery : "https://" + finalQuery) : "https://www.google.com/search?q=" + encodeURIComponent(finalQuery);
+                    window.open(finalURL, "_blank");
+                }, index * 500);
+            });
+        }
+    </script>
+</body>
+</html>
