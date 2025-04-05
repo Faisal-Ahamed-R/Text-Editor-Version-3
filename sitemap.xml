@@ -6,4 +6,16 @@
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
+     <url>
+        <loc>https://faisal-ahamed-r.github.io/Text-Editor-Version-3/MultipleTabOpener.html</loc>
+        <lastmod>2025-04-05</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+     <url>
+        <loc>https://faisal-ahamed-r.github.io/Text-Editor-Version-3/hom.html</loc>
+        <lastmod>2025-04-05</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
 </urlset>
