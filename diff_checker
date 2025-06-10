@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Online Diff Checker - Compare Text & Find Differences Instantly</title>
+  <meta name="description" content="Quickly compare text, documents, or files with our free online Diff Checker. Highlight differences by word or character. No sign-up required, instant results!">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/diff2html/bundles/css/diff2html.min.css" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+    }
+    header, footer {
+      background-color: #333;
+      color: white;
+      padding: 1em;
+      text-align: center;
+    }
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.5em 1em;
+      background-color: #222;
+    }
+    nav .logo {
+      font-weight: bold;
+      font-size: 1.2em;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1em;
+    }
+    nav ul li {
+      color: white;
+      cursor: pointer;
+    }
+    .container {
+      padding: 2em;
+    }
+    .card {
+      background: white;
+      padding: 1em;
+      margin-bottom: 2em;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    textarea {
+      width: 100%;
+      height: 150px;
+      font-family: monospace;
+      padding: 0.5em;
+      margin-bottom: 1em;
+      resize: vertical;
+    }
+    button {
+      padding: 0.5em 1em;
+      margin-right: 1em;
+      font-size: 1em;
+      cursor: pointer;
+    }
+    .diff-output {
+      margin-top: 1em;
+    }
+    iframe, img {
+      width: 100%;
+      border-radius: 8px;
+    }
+    .card-content {
+      margin-top: 1em;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">TextMatchDiff</div>
+      <ul>
+        <li>Home</li>
+        <li>About</li>
+        <li>Contact</li>
+      </ul>
+    </nav>
+  </header>
+  <div>
+    <h1></h1>
+  </div>
+
+  <div class="container">
+    <div class="card">
+      <h2>About This Tool</h2>
+      <p>This tool helps compare two sets of text using a visual diff format, similar to diffchecker or code version comparison tools.</p>
+    </div>
+
+    <div class="card">
+      <h2>Text Comparison</h2>
+      <textarea id="inputA" placeholder="Enter original or reference text..."></textarea>
+      <textarea id="inputB" placeholder="Enter changed or compared text..."></textarea>
+      <button onclick="generateDiff()">Compare</button>
+      <div id="diffContainer" class="diff-output"></div>
+    </div>
+
+    <div class="card">
+      <h3>Tool Demonstration</h3>
+      <iframe height="200" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen></iframe>
+      <div class="card-content">
+        <p>This video shows how to compare two versions of text or code effectively using this tool.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Use Case Example</h3>
+      <img src="https://via.placeholder.com/600x200" alt="Use Case">
+      <div class="card-content">
+        <p>Great for students, editors, and developers to see clear differences in structure, grammar, or logic.</p>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 TextMatchDiff. All rights reserved.</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/diff@5.0.0/dist/diff.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/diff2html/bundles/js/diff2html.min.js"></script>
+  <script>
+    function generateDiff() {
+      const inputA = document.getElementById('inputA').value;
+      const inputB = document.getElementById('inputB').value;
+
+      const diff = Diff.createPatch('Comparison', inputA, inputB);
+      const diffHtml = Diff2Html.html(diff, { drawFileList: false, matching: 'lines', outputFormat: 'line-by-line' });
+
+      document.getElementById('diffContainer').innerHTML = diffHtml;
+    }
+  </script>
+</body>
+</html>
