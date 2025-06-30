@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Online Text Editing Tools | Fast & Easy</title>
+        <link rel="icon" href="faviconfinal.png">
+    <meta name="description" content="Free online text editing tools to format, clean, and optimize your content. Use our Advanced Text Editor, Nx2 Formatter, and URL Tab Opener to boost productivity.">
+    <meta name="keywords" content="text editor online, free text tools, online text formatter, url opener, text to columns, br tag formatter, multi tab url opener">
+    <meta name="author" content="Text Tool Kit">
+    <link rel="canonical" href="https://faisal-ahamed-r.github.io/Text-Editor-Version-3/about.html" />
+    <meta property="og:title" content="Free Online Text Editing Tools | Fast & Easy">
+    <meta property="og:description" content="Boost your productivity with our free online text editing tools. Clean, format, and manage text like a pro.">
+    <meta property="og:image" content="website-preview.png">
+    <meta property="og:url" content="https://faisal-ahamed-r.github.io/Text-Editor-Version-3/about.html">
+    <meta property="og:type" content="website">
+    <meta name="twitter:title" content="Free Online Text Editing Tools">
+    <meta name="twitter:description" content="Use our powerful tools to format, convert, and clean your text effortlessly.">
+    <meta name="twitter:image" content="website-preview.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Text Tool Kit",
+      "url": "https://faisal-ahamed-r.github.io/Text-Editor-Version-3/about.html",
+      "description": "Free online text editing tools to format, clean, and optimize your content. Use our Advanced Text Editor, Nx2 Formatter, and URL Tab Opener to boost productivity.",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Text Tool Kit"
+      }
+    }
+    </script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-blue: #007bff;
+            --secondary-teal: #00bcd4;
+            --dark-text: #343a40;
+            --light-text: #495057;
+            --bg-light-grey: #f0f2f5;
+            --bg-white: #ffffff;
+            --bg-medium-grey: #e9ecef;
+            --navbar-bg: #212529; /* Darker charcoal for sleek look */
+            --accent-hover: #0056b3; /* Darker blue for hover */
+            --padding-section: 3.5rem 1.5rem; /* Consistent section padding */
+            --max-width-content: 1000px; /* Max width for main content sections */
+            --border-radius-main: 10px; /* Consistent border radius for sections */
+            --shadow-main: 0 4px 15px rgba(0, 0, 0, 0.08); /* Consistent shadow for sections */
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            font-size: 16px; /* Base font size for rem units */
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: var(--bg-light-grey);
+            color: var(--dark-text);
+            line-height: 1.6;
+        }
+
+        /* --- Navbar --- */
+        .navbar {
+            background: var(--navbar-bg);
+            position: sticky;
+            top: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 1.5rem; /* 16px 24px */
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            height: 60px; /* Fixed height for consistent calculation */
+        }
+
+        .navbar a.logo {
+            color: var(--bg-white);
+            font-weight: 700; /* Bold */
+            font-size: 1.5rem; /* 24px */
+            text-decoration: none;
+            letter-spacing: 0.05rem;
+        }
+
+        .nav-menu {
+            list-style: none;
+            display: flex;
+            gap: 1.5rem; /* 24px */
+        }
+
+        .nav-menu li a {
+            color: var(--bg-white);
+            text-decoration: none;
+            font-size: 1rem; /* 16px */
+            padding: 0.5rem 0.8rem;
+            border-radius: 0.3rem;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        .nav-menu li a:hover {
+            background: var(--primary-blue);
+            color: var(--bg-white);
+        }
+
+        .hamburger {
+            display: none; /* Hidden by default on larger screens */
+            cursor: pointer;
+            z-index: 1100;
+            width: 30px; /* Ensure click area */
+            height: 24px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .hamburger span {
+            height: 3px;
+            width: 100%;
+            background: var(--bg-white);
+            border-radius: 2px;
+            transition: all 0.3s ease-in-out;
+        }
+
+        /* --- Hamburger active state animation --- */
+        .hamburger.active span:nth-child(1) {
+            transform: translateY(9px) rotate(45deg);
+        }
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+        .hamburger.active span:nth-child(3) {
+            transform: translateY(-9px) rotate(-45deg);
+        }
+
+        /* --- Hero Section --- */
+        header.hero {
+            background: linear-gradient(to right, var(--primary-blue), var(--secondary-teal));
+            padding: 5rem 1.5rem; /* 80px 24px */
+            text-align: center;
+            color: var(--bg-white);
+            border-radius: 0 0 15px 15px; /* Slightly rounded bottom corners */
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        header.hero h1 {
+            font-size: 2.8rem; /* 44.8px */
+            margin-bottom: 1rem; /* 16px */
+            font-weight: 800;
+            line-height: 1.2;
+        }
+
+        header.hero p {
+            font-size: 1.15rem; /* 18.4px */
+            margin-bottom: 2rem; /* 32px */
+            opacity: 0.9;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap; /* Allows buttons to wrap on small screens */
+            gap: 1rem; /* 16px */
+        }
+
+        .hero-buttons a {
+            background: var(--bg-white);
+            color: var(--primary-blue);
+            padding: 0.9rem 1.8rem; /* 14.4px 28.8px */
+            text-decoration: none;
+            border-radius: 50px; /* Pill shape */
+            font-weight: 600;
+            transition: background 0.3s ease, color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .hero-buttons a:hover {
+            background: var(--accent-hover);
+            color: var(--bg-white);
+            transform: translateY(-3px); /* Subtle lift effect */
+        }
+
+        /* --- Features Section --- */
+        section.features {
+            padding: var(--padding-section);
+            max-width: var(--max-width-content);
+            margin: 3rem auto; /* Center the section */
+            text-align: left;
+            background: var(--bg-white);
+            border-radius: var(--border-radius-main);
+            box-shadow: var(--shadow-main);
+        }
+
+        section.features h2 {
+            font-size: 2rem; /* 32px */
+            margin-bottom: 1.5rem; /* 24px */
+            text-align: center;
+            color: var(--dark-text);
+        }
+
+        section.features p {
+            font-size: 1.1rem; /* 17.6px */
+            margin-bottom: 1.5rem; /* 24px */
+            text-align: center;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            color: var(--light-text);
+        }
+
+        section.features ul {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive grid */
+            gap: 1rem; /* 16px */
+            margin-top: 1.5rem;
+        }
+
+        section.features ul li {
+            background: var(--bg-medium-grey);
+            padding: 1rem 1.2rem;
+            border-radius: 8px;
+            font-size: 1.05rem; /* 16.8px */
+            color: var(--dark-text);
+            display: flex;
+            align-items: center;
+            gap: 0.7rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            transition: transform 0.2s ease;
+        }
+
+        section.features ul li:hover {
+            transform: translateY(-5px);
+        }
+
+        /* --- Our Powerful Tools Section --- */
+        .tools-showcase {
+            padding: var(--padding-section);
+            max-width: var(--max-width-content);
+            margin: 3rem auto;
+            background: var(--bg-white);
+            border-radius: var(--border-radius-main);
+            box-shadow: var(--shadow-main);
+            text-align: center;
+        }
+
+        .tools-showcase h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            color: var(--dark-text);
+        }
+
+        .tool-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            justify-content: center;
+        }
+
+        .tool-card {
+            background: var(--bg-medium-grey);
+            border-radius: 10px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .tool-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .tool-card img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .tool-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 0.8rem;
+            color: var(--primary-blue);
+        }
+
+        .tool-card p {
+            font-size: 1rem;
+            color: var(--light-text);
+            margin-bottom: 1.5rem;
+            flex-grow: 1; /* Allows description to take up available space */
+        }
+
+        .tool-card .tool-button {
+            background: var(--primary-blue);
+            color: var(--bg-white);
+            padding: 0.7rem 1.5rem;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: background 0.3s ease;
+        }
+
+        .tool-card .tool-button:hover {
+            background: var(--accent-hover);
+        }
+
+        /* --- About Us Section --- */
+        .Aboutus {
+            padding: var(--padding-section);
+            background: var(--bg-medium-grey);
+            color: var(--dark-text);
+            margin: 3rem auto;
+            max-width: var(--max-width-content);
+            border-radius: var(--border-radius-main);
+            box-shadow: var(--shadow-main);
+            text-align: center; /* Default center align for entire section */
+        }
+
+        .Aboutus h2, .Aboutus h4 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: var(--dark-text);
+        }
+
+        .Aboutus h4 {
+            font-size: 1.5rem;
+            margin-top: 2rem;
+            color: var(--primary-blue);
+        }
+
+        /* New container for about section text to control width and alignment */
+        .about-content {
+            max-width: 750px; /* Constrain width for better readability on desktop */
+            margin-left: auto;
+            margin-right: auto;
+            text-align: left; /* Align content inside this div to left */
+        }
+
+        .about-content p {
+            font-size: 1.05rem;
+            margin-bottom: 1rem;
+            color: var(--light-text);
+            /* Reset any parent text-align here if inherited */
+            text-align: left;
+        }
+
+        /* Styling for the question/answer pairs in About Us */
+        .about-question-answer {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 1rem; /* Space between each Q&A pair */
+        }
+        .about-question-answer span {
+            font-size: 1.05rem; /* Ensure consistent text size */
+            color: var(--light-text);
+            margin-bottom: 0.5rem; /* Space between question and answer */
+        }
+        .about-question-answer strong {
+             font-weight: 600; /* Make questions slightly bolder */
+             color: var(--dark-text);
+        }
+
+        /* --- Contact Section --- */
+        .contact-section {
+            padding: var(--padding-section);
+            max-width: var(--max-width-content);
+            margin: 3rem auto;
+            background: var(--bg-white);
+            border-radius: var(--border-radius-main);
+            box-shadow: var(--shadow-main);
+            text-align: center;
+        }
+
+        .contact-section h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: var(--dark-text);
+        }
+
+        .contact-section p {
+            font-size: 1.05rem;
+            color: var(--light-text);
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .contact-form-container {
+            max-width: 680px; /* Adjust max-width to accommodate iframe width */
+            margin: 0 auto;
+            padding: 1rem; /* Reduce padding slightly as iframe has its own margins */
+            background: var(--bg-medium-grey);
+            border-radius: var(--border-radius-main);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            display: flex; /* Use flex to center iframe */
+            justify-content: center; /* Center iframe horizontally */
+            align-items: center; /* Center iframe vertically */
+            min-height: 700px; /* Ensure enough height for the iframe */
+        }
+
+        .contact-form-container iframe {
+            width: 100%; /* Make iframe responsive to container width */
+            height: 100%; /* Make iframe responsive to container height */
+            min-height: 688px; /* Ensure a minimum height for the iframe content */
+            border-radius: var(--border-radius-main); /* Match container radius */
+            overflow: hidden; /* Hide any overflow within iframe */
+        }
+
+        /* --- Footer --- */
+        footer {
+            background: var(--navbar-bg);
+            color: var(--bg-white);
+            padding: 2rem 1.5rem; /* 32px 24px */
+            text-align: center;
+            margin-top: 4rem; /* More space before footer */
+            border-radius: 15px 15px 0 0; /* Rounded top corners */
+            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        footer p {
+            margin: 0.5rem 0; /* 8px 0 */
+            font-size: 0.9rem; /* 14.4px */
+            opacity: 0.8;
+        }
+
+        /* --- Media Queries for Responsiveness --- */
+
+        /* Mobile devices (default styles are mobile-first) */
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 0.8rem 1rem; /* Smaller padding */
+                height: auto; /* Allow height to adjust */
+            }
+
+            .navbar a.logo {
+                font-size: 1.3rem; /* Slightly smaller logo */
+            }
+
+            .nav-menu {
+                flex-direction: column;
+                background: var(--navbar-bg);
+                position: absolute;
+                top: 60px; /* Exactly below the 60px height navbar */
+                left: 0;
+                right: 0;
+                display: none; /* Hidden by default */
+                padding: 1rem 0;
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            }
+
+            .nav-menu.active {
+                display: flex; /* Show when active */
+            }
+
+            .nav-menu li {
+                width: 100%;
+                text-align: center;
+            }
+
+            .nav-menu li a {
+                padding: 0.8rem 1rem;
+                display: block;
+                border-radius: 0;
+            }
+            .nav-menu li a:hover {
+                background: var(--primary-blue);
+            }
+
+            .hamburger {
+                display: flex; /* Show hamburger icon */
+            }
+
+            header.hero {
+                padding: 4rem 1rem; /* Smaller padding for hero */
+            }
+
+            header.hero h1 {
+                font-size: 2rem; /* Smaller heading on mobile */
+            }
+
+            header.hero p {
+                font-size: 1rem; /* Smaller paragraph */
+            }
+
+            .hero-buttons a {
+                padding: 0.8rem 1.5rem; /* Smaller buttons */
+                font-size: 0.95rem;
+            }
+
+            section.features, .Aboutus, .tools-showcase, .contact-section {
+                padding: 2rem 1rem; /* Smaller padding */
+                margin: 2rem auto;
+            }
+
+            section.features h2, .Aboutus h2, .Aboutus h4, .tools-showcase h2, .contact-section h2 {
+                font-size: 1.6rem; /* Smaller section headings */
+                text-align: left; /* Align to left on small screens */
+            }
+
+            section.features p, .tool-card p, .contact-section p {
+                font-size: 1rem; /* Base font size for paragraphs */
+                text-align: left;
+            }
+
+            section.features ul {
+                grid-template-columns: 1fr; /* Stack features vertically */
+            }
+
+            section.features ul li {
+                font-size: 1rem; /* Adjust feature list item font size */
+            }
+
+            .tool-grid {
+                grid-template-columns: 1fr; /* Stack tool cards vertically */
+            }
+
+            /* About section specific mobile adjustments */
+            .about-content {
+                text-align: left; /* Ensure content remains left-aligned on mobile */
+            }
+            .about-question-answer span {
+                text-align: left; /* Ensure these are left-aligned */
+            }
+            /* Contact form specific mobile adjustments */
+            .contact-form-container {
+                padding: 0.5rem; /* Even smaller padding for iframe on mobile */
+                min-height: 650px; /* Adjust min-height for mobile if needed */
+            }
+            .contact-form-container iframe {
+                min-height: 600px; /* Smaller min-height for iframe on mobile */
+            }
+        }
+
+        /* Tablet devices and larger phones */
+        @media (min-width: 480px) and (max-width: 768px) {
+            header.hero h1 {
+                font-size: 2.2rem;
+            }
+            section.features ul {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            }
+        }
+
+        /* Large devices / Desktops */
+        @media (min-width: 769px) {
+            .nav-menu {
+                display: flex !important; /* Ensure menu is always visible on desktop */
+            }
+            .hamburger {
+                display: none;
+            }
+            /* Ensure section headings are centered on desktop */
+            .Aboutus h2, .Aboutus h4, .tools-showcase h2, .contact-section h2, section.features h2 {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="https://faisal-ahamed-r.github.io/Text-Editor-Version-3/hom.html" class="logo">Text Tool Kit</a>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <ul class="nav-menu">
+            <li><a href="https://faisal-ahamed-r.github.io/Text-Editor-Version-3/hom.html">Home</a></li>
+            <li><a href="https://faisal-ahamed-r.github.io/Text-Editor-Version-3">Tool</a></li>
+            <li><a href="https://faisal-ahamed-r.github.io/Text-Editor-Version-3/contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero">
+        <h1>Free Online Text Editing Tools</h1>
+        <p>Boost productivity with our easy-to-use text formatting tools</p>
+        <div class="hero-buttons">
+            <a href="https://faisal-ahamed-r.github.io/Text-Editor-Version-3">✍️ Advance Text Editor</a>
+            <a href="https://faisal-ahamed-r.github.io/Text-Editor-Version-3/multiple-tab-url-opener.html">🔗 URL Tab Opener</a>
+        </div>
+    </header>
+
+    <section class="features">
+        <h2>Why Use Our Free Online Text Tools?</h2>
+        <p>Whether you're a developer, writer, or student, our tools help you quickly format and clean your text for better readability, SEO, or data processing. We offer:</p>
+        <ul>
+            <li>✅ Advanced Text Editor to clean & optimize your content</li>
+            <li>✅ Convert lines into N x 2 format for tabular use</li>
+            <li>✅ Insert & format with Brake(br) tags for HTML clarity</li>
+            <li>✅ Open multiple URLs in tabs instantly</li>
+        </ul>
+    </section>
+
+    <section class="tools-showcase">
+        <h2>Our Powerful Tools</h2>
+        <div class="tool-grid">
+            <div class="tool-card">
+                <img src="advancetexteditor.png" alt="Advanced Text Editor">
+                <h3>Advanced Text Editor</h3>
+                <p>Clean, format, and optimize your content with powerful editing features. Ideal for refining text for readability and SEO.</p>
+                <a href="https://faisal-ahamed-r.github.io/Text-Editor-Version-3" class="tool-button">Use Editor</a>
+            </div>
+            <div class="tool-card">
+                <img src="Multitabopener.png" alt="Multiple URL Tab Opener">
+                <h3>Multiple URL Tab Opener</h3>
+                <p>Open numerous links instantly in new tabs, saving you time during research and content curation.</p>
+                <a href="https://faisal-ahamed-r.github.io/Text-Editor-Version-3/multiple-tab-url-opener.html" class="tool-button">Open URLs</a>
+            </div>
+            </div>
+    </section>
+
+    <section id="about" class="Aboutus">
+        <h2>About Us</h2>
+        <div class="about-content">
+            <p><strong>Tired of Tab Overload and Text Troubles?</strong><br>
+            Hey there, fellow SEO experts, content editors, copywriters, and tool enthusiasts! Ever feel like you're drowning in browser tabs or wasting precious time on endless text tweaks? We get it. That's why we built Text Tool Kit — your free online toolbox for all things text and research.</p>
+
+            <h4>What Can We Help You Do?</h4>
+            <div class="about-question-answer">
+                <span><strong>Organize your text effortlessly?</strong> Yes, we've got tools for that.</span>
+                <span><strong>Research like a pro without opening a hundred tabs?</strong> Our multiple URL opener is a game-changer.</span>
+                <span><strong>Ensure your content is original – down to the sentence, paragraph, or even code snippet?</strong> Absolutely.</span>
+            </div>
+
+            <h4>Why Choose Our Free Tools?</h4>
+            <p>Beyond the basics, we're constantly adding powerful features to help you work smarter, not harder. Want to:</p>
+            <div class="about-question-answer">
+                <span><strong>Clean and optimize your content with an advanced text editor?</strong></span>
+                <span><strong>Convert text into neat tables (N x 2 format)?</strong></span>
+                <span><strong>Quickly add HTML "br" tags for perfect formatting?</strong></span>
+                <span><strong>Instantly open multiple URLs from a list?</strong></span>
+            </div>
+            <p>Ready to simplify your workflow and boost your productivity? Take a spin through our free tools and see how they can make your day easier.</p>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+        <h2>Contact Us</h2>
+        <p>We&#39;d love to hear from you! Share your feedback, suggestions, or any questions you might have.</p>
+
+        <div class="contact-form-container">
+            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfyYaT8gfRJIlngksYnb1ciDtukW4_Rt1WscqaKRw2fE37bXw/viewform?embedded=true" width="640" height="688" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+        </div>
+        </section>
+
+    <footer>
+        <p>&copy; 2025 Text Tool Kit. All rights reserved.</p>
+        <p>Built for smart editing and powerful link management online.</p>
+    </footer>
+
+    <script>
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+        const navbar = document.querySelector('.navbar');
+        const navLinks = document.querySelectorAll('.nav-menu li a');
+
+        hamburger.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            hamburger.classList.toggle('active');
+            navMenu.style.top = `${navbar.offsetHeight}px`;
+        });
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                setTimeout(() => {
+                    navMenu.classList.remove('active');
+                    hamburger.classList.remove('active');
+                }, 100);
+            });
+        });
+
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768) {
+                navMenu.classList.remove('active');
+                hamburger.classList.remove('active');
+            } else {
+                if (navMenu.classList.contains('active')) {
+                    navMenu.style.top = `${navbar.offsetHeight}px`;
+                }
+            }
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            if (window.innerWidth <= 768) {
+                navMenu.style.top = `${navbar.offsetHeight}px`;
+            }
+        });
+
+        // No specific JavaScript needed for Google Form submission, as the iframe handles it.
+    </script>
+</body>
+</html>
