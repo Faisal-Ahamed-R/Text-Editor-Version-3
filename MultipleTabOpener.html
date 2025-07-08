@@ -4,19 +4,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bulk URL Opener – Open Multiple URLs & Search Tabs Online</title>
+    <title>Bulk URL Opener</title>
     <meta name="description"
         content="Open all your URLs or search queries in new tabs with our Bulk URL Opener. Extract links, launch batch searches, and save time. No extension needed." />
     <meta name="robots" content="index, follow" />
-    <meta property="og:title" content="Bulk URL Opener – Open Multiple URLs & Search Tabs Online" />
+    <meta property="og:title" content="Bulk URL Opener" />
     <meta property="og:description"
         content="Open all your URLs or search queries in new tabs with our Bulk URL Opener. Extract links, launch batch searches, and save time. No extension needed." />
     <meta property="og:url" content="https://faisal-ahamed-r.github.io/Text-Editor-Version-3/MultipleTabOpener.html" />
     <meta property="og:type" content="website" />
-    <meta name="twitter:title" content="Bulk URL Opener – Open Multiple URLs & Search Tabs Online" />
+    <meta name="twitter:title" content="Bulk URL Opener" />
     <meta name="twitter:description"
         content="Open all your URLs or search queries in new tabs with our Bulk URL Opener. Extract links, launch batch searches, and save time. No extension needed." />
-    <link rel="icon" href="faviconfinal.png">
+<link rel="icon" type="image/png" href="/faviconfinal.png">
+<link rel="shortcut icon" href="/faviconfinal.png" type="image/png">
     <link rel="canonical" href="https://faisal-ahamed-r.github.io/Text-Editor-Version-3/MultipleTabOpener.html" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
         integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
@@ -185,6 +186,7 @@
         textarea,
         input {
             width: 100%;
+            max-width: 100%;
             padding: 12px 14px;
             border: 2px solid #3498db;
             box-shadow: 0 0 10px rgba(22, 115, 208, 0.5);
@@ -551,8 +553,8 @@
       "url": "https://faisal-ahamed-r.github.io/Text-Editor-Version-3/faviconfinal.png"
     }
   },
-  "contentUrl": "https://youtu.be/rjMcuyhUpy8",
-  "embedUrl": "https://www.youtube.com/embed/rjMcuyhUpy8",
+  "contentUrl": "https://youtu.be/1Sv__34aU9E",
+  "embedUrl": "https://www.youtube.com/embed/1Sv__34aU9E",
   "interactionStatistic": {
     "@type": "InteractionCounter",
     "interactionType": {
@@ -616,7 +618,7 @@
             <i class="fas fa-bars"></i>
         </div>
     </nav>
-    <h1 style="text-align: center;">Bulk URL Opener - Open Multiple URLs, Search Tabs, and Extract Links</h1>
+    <h1 style="text-align: center;">Bulk URL Opener</h1>
     <center>
         <p style="max-width: 1000px;">You can open multiple tab in a single click with your prefered keywords or search
             query or links. Also you can extract URL from sitemap, html code and others.</p>
@@ -629,6 +631,9 @@
             <textarea id="input-text" rows="8"
                 placeholder="e.g., https://example.com&#10;Google AI&#10;openai.com&#10;&#10;What is multiple tab opener?&#10;how to use it?"></textarea>
         </div>
+         <div id="line-count" style="margin-top: 6px; font-size: 0.9rem; color: #555;">
+    Total Lines: 0
+</div>
         <div class="row">
 
             <div class="form-group">
@@ -709,8 +714,13 @@
         </section>
 
         <section>
-            <h2>Video Tutorial</h2>
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/rjMcuyhUpy8?si=_z_jF5ZCWhQguBsO" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <h2>Video Tutorial for Open Multiple URLs tool</h2>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/1Sv__34aU9E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </section>
+        <section>
+             <section>
+            <h2>Video Tutorial - Search queries</h2>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/XqTC0pC4nMg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </section>
         <section>
             <h2>How is this Tool Useful?</h2>
@@ -749,116 +759,118 @@
 
 
 
-    <script>
-        function openTabsWithRange() {
-            let lines = document.getElementById("input-text").value
-                .split("\n")
-                .map(line => line.trim())
-                .filter(line => line);
+ <script>
+    function isProbablyURL(str) {
+    const urlPattern = /^https?:\/\/[^\s]+$/i;
+    return urlPattern.test(str.trim());
+}
 
-            const totalLines = lines.length;
+    function openTabsWithRange() {
+    let lines = document.getElementById("input-text").value
+        .split("\n")
+        .map(line => line.trim())
+        .filter(line => line);
 
-            let leftWord = document.getElementById("left-word").value;
-            let rightWord = document.getElementById("right-word").value;
+    const totalLines = lines.length;
 
-            let start = parseInt(document.getElementById("start-line").value) || 1;
-            let end = parseInt(document.getElementById("end-line").value) || totalLines;
+    let leftWord = document.getElementById("left-word").value;
+    let rightWord = document.getElementById("right-word").value;
 
-            start = Math.max(start - 1, 0);
-            end = Math.min(end, totalLines);
+    let start = parseInt(document.getElementById("start-line").value) || 1;
+    let end = parseInt(document.getElementById("end-line").value) || totalLines;
 
-            const slicedLines = lines.slice(start, end).reverse(); // Reverse for tab order
+    start = Math.max(start - 1, 0);
+    end = Math.min(end, totalLines);
 
-            slicedLines.forEach((line, index) => {
-                setTimeout(() => {
-                    const isURL = line.match(/^(https?:\/\/)?(www\.)?[a-zA-Z0-9-]+\.[a-zA-Z]{2,}(\/.*)?$/);
+    const slicedLines = lines.slice(start, end).reverse();
 
-                    let finalQuery = line;
-                    if (leftWord && rightWord) {
-                        finalQuery = `${leftWord}${line}${rightWord}`;
-                    } else if (leftWord) {
-                        finalQuery = `${leftWord}${line}`;
-                    } else if (rightWord) {
-                        finalQuery = `${line}${rightWord}`;
-                    }
+    slicedLines.forEach((line, index) => {
+        setTimeout(() => {
+            let finalQuery = line;
 
-                    let finalURL = isURL
-                        ? (line.startsWith("http") ? finalQuery : "https://" + finalQuery)
-                        : "https://www.google.com/search?q=" + encodeURIComponent(finalQuery);
-
-                    window.open(finalURL, "_blank");
-                }, index * 500);
-            });
-        }
-        function extractOnlyURLsMoreStrict() {
-            let inputElement = document.getElementById("input-text");
-            let rawText = inputElement.value;
-
-
-            const urlRegex = /(https?:\/\/[^ \t\n\r"'<>{}[\];,]+)|(www\.[^ \t\n\r"'<>{}[\];,]+)|([a-zA-Z0-9-]+\.[a-zA-Z]{2,}(?:\/[^ \t\n\r"'<>{}[\];,]*)?)/gi;
-
-            let foundURLs = [];
-            let match;
-
-            while ((match = urlRegex.exec(rawText)) !== null) {
-            
-                let extractedUrl = match[0].trim();
-                
-                extractedUrl = extractedUrl.replace(/[\.,;!)\]}\>]$/, '');
-
-                foundURLs.push(extractedUrl);
+            if (leftWord && rightWord) {
+                finalQuery = `${leftWord}${line}${rightWord}`;
+            } else if (leftWord) {
+                finalQuery = `${leftWord}${line}`;
+            } else if (rightWord) {
+                finalQuery = `${line}${rightWord}`;
             }
 
-            let uniqueURLs = [...new Set(foundURLs)];
-            inputElement.value = uniqueURLs.join("\n");
-        }
-        document.addEventListener('DOMContentLoaded', function () {
-            const mobileMenu = document.getElementById('mobile-menu');
-            const navLinks = document.querySelector('.nav-links');
-            const dropdown = document.querySelector('.dropdown');
-            const dropbtn = document.querySelector('.dropbtn');
+let finalURL;
+if (isProbablyURL(finalQuery)) {
+    finalURL = finalQuery;
+} else {
+    finalURL = "https://www.google.com/search?q=" + encodeURIComponent(finalQuery);
+}
 
-            mobileMenu.addEventListener('click', function () {
-                navLinks.classList.toggle('active');
-                if (!navLinks.classList.contains('active')) {
-                    dropdown.classList.remove('active');
-                }
-            });
+           
 
-            dropbtn.addEventListener('click', function (event) {
-                event.preventDefault();
-                event.stopPropagation(); 
+            window.open(finalURL, "_blank");
+        }, index * 500);
+    });
+}
 
+    function extractOnlyURLsMoreStrict() {
+    const inputElement = document.getElementById("input-text");
+    const rawText = inputElement.value;
 
-                if (window.innerWidth <= 768 || navLinks.classList.contains('active')) {
-                    dropdown.classList.toggle('active');
-                }
-            });
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(rawText, "text/html");
 
-            navLinks.querySelectorAll('a').forEach(link => {
-                link.addEventListener('click', function () {
-                    if (!this.classList.contains('dropbtn')) {
-                        if (navLinks.classList.contains('active')) {
-                            navLinks.classList.remove('active');
-                            dropdown.classList.remove('active'); 
-                        }
+    const urlSet = new Set();
+
+    const attributesToCheck = ['href', 'src', 'data-src', 'data-href'];
+
+    attributesToCheck.forEach(attr => {
+        const elements = doc.querySelectorAll(`[${attr}]`);
+        elements.forEach(el => {
+            let url = el.getAttribute(attr);
+            if (url) {
+                url = url.trim();
+
+                if (
+                    url.startsWith("javascript:") ||
+                    url.startsWith("#") ||
+                    url.startsWith("mailto:")
+                ) return;
+
+                try {
+                    const fullUrl = new URL(url, "https://example.com"); 
+                    if (fullUrl.protocol === "http:" || fullUrl.protocol === "https:") {
+                        urlSet.add(fullUrl.href);
                     }
-                });
-            });
-
-            document.addEventListener('click', function (event) {
-                if (window.innerWidth <= 768 && dropdown.classList.contains('active')) {
-                    if (!dropdown.contains(event.target) && !dropbtn.contains(event.target)) {
-                        dropdown.classList.remove('active');
-                    }
+                } catch (e) {
                 }
-            });
+            }
         });
-        function toggleFAQ(index) {
-            const answers = document.querySelectorAll('.answer');
-            answers[index].style.display = answers[index].style.display === 'block' ? 'none' : 'block';
-        }
-    </script>
+    });
+
+    const fallbackRegex = /\bhttps?:\/\/[^\s<>"'`{}()[\]]+/gi;
+    const fallbackMatches = rawText.match(fallbackRegex);
+    if (fallbackMatches) {
+        fallbackMatches.forEach(url => urlSet.add(url));
+    }
+
+    inputElement.value = Array.from(urlSet).join("\n");
+}
+document.addEventListener("DOMContentLoaded", function () {
+    const inputText = document.getElementById("input-text");
+    const lineCountDisplay = document.getElementById("line-count");
+
+    function updateLineCount() {
+        const lines = inputText.value
+            .split("\n")
+            .map(line => line.trim())
+            .filter(line => line !== "");
+        lineCountDisplay.textContent = "Total Lines: " + lines.length;
+    }
+
+    inputText.addEventListener("input", updateLineCount);
+
+    updateLineCount();
+});
+
+</script>
 </body>
 
 </html>
