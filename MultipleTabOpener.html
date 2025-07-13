@@ -869,7 +869,56 @@ document.addEventListener("DOMContentLoaded", function () {
 
     updateLineCount();
 });
+document.addEventListener('DOMContentLoaded', function() {
+    const mobileMenu = document.getElementById('mobile-menu');
+    const navLinks = document.querySelector('.nav-links');
+    const dropdown = document.querySelector('.dropdown');
+    const dropbtn = document.querySelector('.dropbtn');
 
+    // Toggle mobile menu
+    mobileMenu.addEventListener('click', function() {
+        navLinks.classList.toggle('active');
+        // Close dropdown if main menu is closed
+        if (!navLinks.classList.contains('active')) {
+            dropdown.classList.remove('active');
+        }
+    });
+
+    // Toggle dropdown for mobile (click on "Tools")
+    dropbtn.addEventListener('click', function(event) {
+        // Prevent immediate navigation or closing the menu
+        event.preventDefault();
+        event.stopPropagation(); // Stop event from bubbling up to document
+        
+        // Only toggle dropdown if on mobile (navLinks is hidden)
+        // Or if navLinks is active (meaning mobile menu is open)
+        if (window.innerWidth <= 768 || navLinks.classList.contains('active')) {
+            dropdown.classList.toggle('active');
+        }
+    });
+
+    // Close mobile menu and dropdown when a link is clicked
+    navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', function() {
+            // Check if the clicked link is not a dropdown toggle
+            if (!this.classList.contains('dropbtn')) {
+                if (navLinks.classList.contains('active')) {
+                    navLinks.classList.remove('active');
+                    dropdown.classList.remove('active'); // Close dropdown too
+                }
+            }
+        });
+    });
+
+    // Close dropdown if clicking outside when it's open on mobile
+    document.addEventListener('click', function(event) {
+        if (window.innerWidth <= 768 && dropdown.classList.contains('active')) {
+            if (!dropdown.contains(event.target) && !dropbtn.contains(event.target)) {
+                dropdown.classList.remove('active');
+            }
+        }
+    });
+});
 </script>
 </body>
 
