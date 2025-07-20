@@ -29,7 +29,7 @@ function convertToSingleLine() {
 
     // Join sentences with a comma and space, ending with " & " between the last two items
     const outputText = formattedSentences.length > 1
-        ? formattedSentences.slice(0, -1).join(', ') + formattedSentences.slice(-1)
+        ? formattedSentences.slice().join(', ')
         : formattedSentences.join('');
 
     // Set the output text
