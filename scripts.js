@@ -29,7 +29,7 @@ function convertToSingleLine() {
 
     // Join sentences with a comma and space, ending with " & " between the last two items
     const outputText = formattedSentences.length > 1
-        ? formattedSentences.slice(0, -1).join(', ') + ' & ' + formattedSentences.slice(-1)
+        ? formattedSentences.slice(0, -1).join(', ') + formattedSentences.slice(-1)
         : formattedSentences.join('');
 
     // Set the output text
@@ -184,6 +184,7 @@ function toggleDarkMode() {
     const buttons = document.querySelectorAll('button');
     const characterCounts = document.querySelectorAll('[id^="characterCount"]');
     const repeatedWords = document.querySelectorAll('[id^="repeatedWords"]');
+    const centerstag = document.querySelectorAll('.centers');
 
     body.classList.toggle('dark-mode');
     sections.forEach(section => section.classList.toggle('dark-mode'));
@@ -191,6 +192,7 @@ function toggleDarkMode() {
     buttons.forEach(button => button.classList.toggle('dark-mode'));
     characterCounts.forEach(count => count.classList.toggle('dark-mode'));
     repeatedWords.forEach(word => word.classList.toggle('dark-mode'));
+    centerstag.forEach(centers => centers.classList.toggle('dark-mode'));
 }
 
 // Check localStorage for dark mode preference
@@ -315,4 +317,110 @@ function showInfo(infoType) {
             infoMessage = "No information available.";
     }
     alert(infoMessage);
+
+    
 }
+document.addEventListener('DOMContentLoaded', function() {
+    const mobileMenu = document.getElementById('mobile-menu');
+    const navLinks = document.querySelector('.nav-links');
+    const dropdown = document.querySelector('.dropdown');
+    const dropbtn = document.querySelector('.dropbtn');
+
+    // Toggle mobile menu
+    mobileMenu.addEventListener('click', function() {
+        navLinks.classList.toggle('active');
+        // Close dropdown if main menu is closed
+        if (!navLinks.classList.contains('active')) {
+            dropdown.classList.remove('active');
+        }
+    });
+
+    // Toggle dropdown for mobile (click on "Tools")
+    dropbtn.addEventListener('click', function(event) {
+        // Prevent immediate navigation or closing the menu
+        event.preventDefault();
+        event.stopPropagation(); // Stop event from bubbling up to document
+        
+        // Only toggle dropdown if on mobile (navLinks is hidden)
+        // Or if navLinks is active (meaning mobile menu is open)
+        if (window.innerWidth <= 768 || navLinks.classList.contains('active')) {
+            dropdown.classList.toggle('active');
+        }
+    });
+
+    // Close mobile menu and dropdown when a link is clicked
+    navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', function() {
+            // Check if the clicked link is not a dropdown toggle
+            if (!this.classList.contains('dropbtn')) {
+                if (navLinks.classList.contains('active')) {
+                    navLinks.classList.remove('active');
+                    dropdown.classList.remove('active'); // Close dropdown too
+                }
+            }
+        });
+    });
+
+    // Close dropdown if clicking outside when it's open on mobile
+    document.addEventListener('click', function(event) {
+        if (window.innerWidth <= 768 && dropdown.classList.contains('active')) {
+            if (!dropdown.contains(event.target) && !dropbtn.contains(event.target)) {
+                dropdown.classList.remove('active');
+            }
+        }
+    });
+});
+
+
+
+function shareTo(platform) {
+  const url = encodeURIComponent(window.location.href);
+  const text = encodeURIComponent(document.title);
+
+  let shareURL = '';
+
+  switch (platform) {
+    case 'facebook':
+      shareURL = `https://www.facebook.com/sharer/sharer.php?u=${url}`;
+      break;
+    case 'twitter':
+      shareURL = `https://twitter.com/intent/tweet?url=${url}&text=${text}`;
+      break;
+    case 'linkedin':
+      shareURL = `https://www.linkedin.com/sharing/share-offsite/?url=${url}`;
+      break;
+    case 'whatsapp':
+      shareURL = `https://wa.me/?text=${text}%20${url}`;
+      break;
+  }
+
+  window.open(shareURL, '_blank', 'noopener,noreferrer');
+}
+
+function copyLink() {
+  navigator.clipboard.writeText(window.location.href).then(() => {
+    alert('Link copied to clipboard!');
+  }, (err) => {
+    alert('Failed to copy: ', err);
+  });
+}
+
+
+const dailyMessages = [
+  "🌞 Happy Monday! Start your week strong with our tools.",
+  "🚀 It's Tuesday! Let's build something amazing together.",
+  "✨ Midweek motivation! Explore new features today.",
+  "💡 It's Thursday! Unlock more power with our toolkit.",
+  "🎯 Happy Friday! Ready to finish strong?",
+  "🔧 Saturday vibes! Polish your work with our tools.",
+  "🌈 Sunday Funday! Plan ahead with our smart utilities."
+];
+
+const dayIndex = new Date().getDay(); // 0 (Sunday) to 6 (Saturday)
+document.getElementById("greetingText").textContent = dailyMessages[dayIndex];
+
+
+function toggleFAQ(index) {
+            const answers = document.querySelectorAll('.answer');
+            answers[index].style.display = answers[index].style.display === 'block' ? 'none' : 'block';
+        }
