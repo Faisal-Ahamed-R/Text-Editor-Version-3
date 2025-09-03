@@ -8,7 +8,6 @@
      <url>
         <loc>https://faisal-ahamed-r.github.io/Text-Editor-Version-3/MultipleTabOpener.html</loc>
         <lastmod>2025-08-04</lastmod>
-        <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
      <url>
@@ -19,6 +18,11 @@
     <url>
         <loc>https://faisal-ahamed-r.github.io/Text-Editor-Version-3/free-online-text-editor.html</loc>
         <lastmod>2025-08-15</lastmod>
+        <priority>1.0</priority>
+    </url>
+      <url>
+        <loc>https://faisal-ahamed-r.github.io/Text-Editor-Version-3/diff_checker.html</loc>
+        <lastmod>2025-09-03</lastmod>
         <priority>1.0</priority>
     </url>
 </urlset>
